@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "8f2aa2ee-02cb-48c8-a885-5874944c125a",
+    "name": "Assignment No. 4 – API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49556307",
+    "_collection_link": "https://go.postman.co/collection/49556307-8f2aa2ee-02cb-48c8-a885-5874944c125a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Object (POST)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Get Object (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"GET successful\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Intentional failing test\", function () {\r",
+              "    pm.expect(201).to.eql(200);\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/objects/{{objectId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "objects",
+            "{{objectId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Object (PUT)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Patch Object (PATCH)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Object (DELETE)",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
